@@ -2,19 +2,24 @@
 import { Router } from 'express';
 //Importamos el controlador get de empleados
 import { getEmployees,
-         createEmployees, 
-         updateEmployees,
-         deleteEmployees } from '../controllers/employees.controller.js';
+         getEmployee,
+         createEmployee, 
+         updateEmployee,
+         deleteEmployee } from '../controllers/employees.controller.js';
 
 const router = Router();
 
 //Endpoints
 router.get('/employees', getEmployees);
 
-router.post('/employees',createEmployees );
+//Endpoint get para obtener un empleado por id
+router.get('/employees/:id', getEmployee); //:id es un parametro
 
-router.put('/employees', updateEmployees);
+router.post('/employees',createEmployee);
 
-router.delete('/employees', deleteEmployees);
+router.patch('/employees/:id', updateEmployee);
+//Put es para actualizar todo el objeto y patch es para actualizar solo una parte del objeto
+
+router.delete('/employees/:id', deleteEmployee);
 
 export default router;

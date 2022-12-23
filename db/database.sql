@@ -10,3 +10,10 @@ CREATE TABLE IF NOT EXISTS employee (
 );
 
 DESCRIBE employee;
+
+INSERT INTO employee (name, salary) VALUES 
+ (1, 'John', 1000),
+ (2, 'Peter', 2000),
+ (3, 'Paul', 3000),
+ (4, 'Mary', 4000),
+ (5, 'David', 5000);

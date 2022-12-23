@@ -1,12 +1,18 @@
 //Importamos el módulo mysql
 import { createPool } from 'mysql2/promise';
+//Importamos las variables de entorno
+import { HOST, 
+         USER, 
+         PASSWORD, 
+         DATABASE, 
+         PORT_DB } from './config.js';
 
 
 //Creamos la conexión a la base de datos
 export const pool = createPool({
-    host: 'localhost', //localhost
-    user: 'root',//usuario
-    password: 'gi18052930',//contraseña
-    port: 3306,//puerto
-    database: 'companydb',//nombre de la base de datos
+    host: HOST, //localhost
+    user: USER,//usuario
+    password: PASSWORD,//contraseña
+    port: PORT_DB,//puerto
+    database: DATABASE,//nombre de la base de datos
 })
